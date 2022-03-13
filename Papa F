@@ -1,0 +1,83 @@
+local DiscordLib = loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+
+local win = DiscordLib:tgls:Toggle("ฟามเวล",false, function(bool)
+print(bool)
+end)Window("ป๋าเอฟ X HUB")
+
+local serv = win:Server("$ซื้อของต่างๆ", "")
+
+local btns = serv:Channel("หมัดต่างๆ")
+
+btns:Button("ขาดำV.1", function()
+DiscordLib:Notification("Notification", "Button", "Okay!")
+end)
+
+btns:Seperator()
+
+btns:Button("หมัดสายฟ้าV.1", function()
+DiscordLib:Notification("Notification", "Button", "Okay!")
+end)
+
+local tgls = serv:Channel("ออโต้ฟาม")
+
+tgls:Toggle("ฟามเวล",false, function(bool)
+print(bool)
+end)
+
+btns:Seperator()
+
+tgls:Toggle("รวมมอท",false, function(bool)
+print(bool)
+end)
+
+local sldrs = serv:Channel("ล็อกเวล")
+
+local sldr = sldrs:Slider("เลื่อนล็อกดิไอ้บือ", 0, 1000, 400, function(t)
+print(t)
+end)
+
+sldrs:Button("รีล็อก", function()
+sldr:Change(50)
+end)
+
+local drops = serv:Channel("เลือกอาวุธ")
+
+
+local drop = drops:Dropdown("เลือกดิ",{"Option 1","ยังไม่ใส่ 2","Option 3","Option 4","Option 5"}, function(bool)
+print(bool)
+end)
+
+drops:Button("Button", function()
+drop:Clear()
+end)
+
+drops:Button("Add Button", function()
+drop:Add("Option")
+end)
+
+local clrs = serv:Channel("Colorpickers")
+
+clrs:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
+print(t)
+end)
+
+local textbs = serv:Channel("Textboxes")
+
+textbs:Textbox("Gun power", "Type here!", true, function(t)
+print(t)
+end)
+
+local lbls = serv:Channel("Labels")
+
+lbls:Label("This is just a label.")
+
+local bnds = serv:Channel("Binds")
+
+bnds:Bind("Kill bind", Enum.KeyCode.RightShift, function()
+print("Killed everyone!")
+end)
+
+serv:Channel("Ui")
+
+
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
